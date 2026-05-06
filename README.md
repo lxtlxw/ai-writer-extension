@@ -2,6 +2,8 @@
 
 一键生成小红书爆款文案、抖音脚本、SEO文章、朋友圈营销文案。
 
+🌐 **官网:** https://lxtlxw.github.io/ai-writer-extension/
+
 ## 功能
 
 - 📕 **小红书文案** - 标题+正文+标签+emoji排版
