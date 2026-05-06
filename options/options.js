@@ -131,7 +131,33 @@ activateBtn.addEventListener('click', async () => {
 // 购买链接
 buyLicenseLink.addEventListener('click', (e) => {
   e.preventDefault();
-  chrome.tabs.create({
-    url: 'https://your-lemonsqueezy-store.com/checkout'
+  chrome.storage.sync.get(['storeUrl'], (result) => {
+    const url = result.storeUrl || 'https://your-lemonsqueezy-store.com/checkout';
+    chrome.tabs.create({ url });
+  });
+});
+
+// ====== 商店 URL 管理 ======
+const storeUrlInput = document.getElementById('storeUrl');
+const saveStoreUrlBtn = document.getElementById('saveStoreUrl');
+const storeStatus = document.getElementById('storeStatus');
+
+chrome.storage.sync.get(['storeUrl'], (result) => {
+  if (result.storeUrl) {
+    storeUrlInput.value = result.storeUrl;
+  }
+});
+
+saveStoreUrlBtn.addEventListener('click', () => {
+  const url = storeUrlInput.value.trim();
+  if (!url) {
+    storeStatus.textContent = '❌ 请输入商店 URL';
+    storeStatus.className = 'status error';
+    return;
+  }
+  chrome.storage.sync.set({ storeUrl: url }, () => {
+    storeStatus.textContent = '✅ 商店 URL 已保存！';
+    storeStatus.className = 'status success';
+    setTimeout(() => { storeStatus.textContent = ''; }, 2000);
   });
 });

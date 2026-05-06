@@ -337,8 +337,9 @@ function showProBanner() {
 }
 upgradeBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  chrome.tabs.create({
-    url: 'https://your-lemonsqueezy-store.com/checkout'
+  chrome.storage.sync.get(['storeUrl'], (result) => {
+    const url = result.storeUrl || 'https://your-lemonsqueezy-store.com/checkout';
+    chrome.tabs.create({ url });
   });
 });
 

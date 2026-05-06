@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 爆款文案 - Chrome 扩展</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #0a0a1a;
+      color: #e0e0ff;
+      line-height: 1.7;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
+      border-bottom: 1px solid #2d1b4e;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6c5ce7, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #a0a0c0;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c5ce7, #a855f7);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(108,92,231,0.4); }
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      color: #f0f0ff;
+    }
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .mode-card {
+      background: #12122a;
+      border: 1px solid #2d1b4e;
+      border-radius: 8px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .mode-card:hover { border-color: #6c5ce7; }
+    .mode-card h3 { color: #a855f7; margin-bottom: 6px; }
+    .mode-card p { color: #8080a0; font-size: 14px; }
+    .pricing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .plan {
+      background: #12122a;
+      border: 1px solid #2d1b4e;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    .plan.pro {
+      border-color: #a855f7;
+      background: linear-gradient(135deg, #12122a 0%, #1a0a2e 100%);
+    }
+    .plan h3 { font-size: 24px; margin-bottom: 8px; }
+    .plan .price { font-size: 36px; font-weight: 800; color: #f0f0ff; margin: 16px 0; }
+    .plan .price span { font-size: 16px; color: #8080a0; }
+    .plan ul { list-style: none; text-align: left; margin: 16px 0; }
+    .plan ul li { padding: 8px 0; border-bottom: 1px solid #1a1a3a; font-size: 14px; }
+    .plan ul li:before { content: "✨ "; }
+    .plan .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 16px;
+    }
+    .plan.free .btn { background: #1a1a3a; color: #e0e0ff; }
+    .plan.pro .btn { background: linear-gradient(135deg, #6c5ce7, #a855f7); color: white; }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .step {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .step .num {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: linear-gradient(135deg, #6c5ce7, #a855f7);
+      border-radius: 50%;
+      display: inline-block;
+      font-weight: 800;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    .step h4 { margin-bottom: 8px; }
+    .step p { font-size: 13px; color: #8080a0; }
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #505070;
+      border-top: 1px solid #2d1b4e;
+    }
+    @media (max-width: 640px) {
+      .mode-grid, .pricing, .steps { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>AI 爆款文案</h1>
+    <p>Chrome 扩展 — 一键生成小红书/抖音/SEO/朋友圈/跨境电商文案</p>
+    <a class="cta-btn" href="https://github.com/lxtlxw/ai-writer-extension/releases">📦 下载扩展</a>
+  </div>
+
+  <div class="section">
+    <h2>📝 文案模式</h2>
+    <div class="mode-grid">
+      <div class="mode-card">
+        <h3>📕 小红书爆款文案</h3>
+        <p>标题 + 正文 + 标签 + emoji 排版，小红书风格优化</p>
+      </div>
+      <div class="mode-card">
+        <h3>🎬 抖音口播脚本</h3>
+        <p>口播脚本 + 分镜 + 引导互动，提升完播率</p>
+      </div>
+      <div class="mode-card">
+        <h3>🔍 SEO 优化文章</h3>
+        <p>标题优化 + 关键词布局 + 元描述，提升搜索排名</p>
+      </div>
+      <div class="mode-card">
+        <h3>💬 朋友圈营销文案</h3>
+        <p>营销文案 + 配图建议，提高转化率</p>
+      </div>
+      <div class="mode-card">
+        <h3>📝 智能总结摘要</h3>
+        <p>提取核心观点 + 关键数据，快速掌握要点</p>
+      </div>
+      <div class="mode-card">
+        <h3>🌐 多语言翻译</h3>
+        <p>支持多种语言互译，保持语境和风格</p>
+      </div>
+      <div class="mode-card">
+        <h3>✏️ 专业润色改写</h3>
+        <p>优化表达，提升文案质量和专业度</p>
+      </div>
+      <div class="mode-card">
+        <h3>🛒 跨境电商 Listing</h3>
+        <p>亚马逊等平台产品描述优化，提升转化率</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>💰 定价</h2>
+    <div class="pricing">
+      <div class="plan free">
+        <h3>免费版</h3>
+        <div class="price">$0 <span>/ forever</span></div>
+        <ul>
+          <li>所有文案模式</li>
+          <li>每次 ≤ 500 字</li>
+          <li>所有语气选项</li>
+          <li>右键菜单快捷操作</li>
+        </ul>
+        <a class="btn" href="https://github.com/lxtlxw/ai-writer-extension">Get Started</a>
+      </div>
+      <div class="plan pro">
+        <h3>Pro</h3>
+        <div class="price">$9.99 <span>/ 月</span></div>
+        <ul>
+          <li>无限字数生成</li>
+          <li>批量生成模式</li>
+          <li>无水印导出</li>
+          <li>优先技术支持</li>
+        </ul>
+        <a class="btn" href="https://github.com/sponsors/lxtlxw">购买 Pro</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🚀 快速开始</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>下载扩展</h4>
+        <p>从 GitHub Releases 下载 zip 包</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>加载扩展</h4>
+        <p>Chrome 打开 chrome://extensions，开启开发者模式，加载解压后的文件夹</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>配置 API Key</h4>
+        <p>在设置页面填入你的 Claude API Key</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>开始使用</h4>
+        <p>选中文字 → 右键 → AI 爆款文案 → 选择模式</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>MIT License · Powered by Claude API · <a href="https://github.com/lxtlxw/ai-writer-extension" style="color:#6c5ce7;">GitHub</a></p>
+  </footer>
+</body>
+</html>
