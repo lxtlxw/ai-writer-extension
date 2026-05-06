@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 爆款文案</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <div class="header">
+      <h1>✨ AI 爆款文案</h1>
+      <span class="tier-badge" id="tierBadge">免费版</span>
+    </div>
+
+    <!-- 模式选择 -->
+    <div class="mode-selector">
+      <button class="mode-btn active" data-mode="xiaohongshu">📕 小红书</button>
+      <button class="mode-btn" data-mode="douyin">🎬 抖音</button>
+      <button class="mode-btn" data-mode="seo">🔍 SEO</button>
+      <button class="mode-btn" data-mode="wechat">💬 朋友圈</button>
+      <button class="mode-btn" data-mode="summary">📝 总结</button>
+      <button class="mode-btn" data-mode="translate">🌐 翻译</button>
+      <button class="mode-btn" data-mode="rewrite">✏️ 润色</button>
+      <button class="mode-btn" data-mode="amazon">🛒 跨境</button>
+    </div>
+
+    <!-- 输入区 -->
+    <div class="input-section">
+      <textarea id="inputText" placeholder="输入或粘贴需要处理的文字...&#10;&#10;或者：选中网页文字后点击扩展图标，自动载入"></textarea>
+      <button id="clearBtn" class="small-btn" title="清空">🗑️</button>
+    </div>
+
+    <!-- 额外选项 -->
+    <div class="options-row" id="extraOptions">
+      <select id="languageOption" class="hidden">
+        <option value="zh">中文</option>
+        <option value="en">英文</option>
+        <option value="ja">日文</option>
+        <option value="ko">韩文</option>
+      </select>
+      <select id="toneOption">
+        <option value="professional">专业严谨</option>
+        <option value="casual">轻松活泼</option>
+        <option value="persuasive">说服力强</option>
+        <option value="emotional">情感共鸣</option>
+      </select>
+    </div>
+
+    <!-- Pro 功能提示 -->
+    <div class="pro-banner hidden" id="proBanner">
+      ⭐ Pro 会员专享：批量生成、更多模板、无水印导出
+      <a href="#" id="upgradeBtn">立即升级 →</a>
+    </div>
+
+    <!-- 生成按钮 -->
+    <button id="generateBtn" class="primary-btn">
+      <span id="btnText">🚀 一键生成</span>
+      <div class="spinner hidden" id="spinner"></div>
+    </button>
+
+    <!-- 输出区 -->
+    <div class="output-section hidden" id="outputSection">
+      <div class="output-header">
+        <span>📄 生成结果</span>
+        <div class="output-actions">
+          <button id="copyBtn" class="small-btn" title="复制">📋</button>
+          <button id="clearOutputBtn" class="small-btn" title="清空">🗑️</button>
+        </div>
+      </div>
+      <div id="outputText" class="output-text"></div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <span id="wordCount">0 字</span>
+      <a href="#" id="settingsLink">⚙️ 设置</a>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

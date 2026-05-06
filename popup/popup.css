@@ -1,0 +1,191 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 480px;
+  min-height: 400px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f8f9fa;
+  color: #1a1a2e;
+}
+
+.container { padding: 16px; }
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.header h1 { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+.tier-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #e8e8e8;
+  color: #666;
+}
+.tier-badge.pro {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Mode Selector */
+.mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.mode-btn {
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mode-btn:hover { border-color: #6c5ce7; color: #6c5ce7; }
+.mode-btn.active {
+  background: #6c5ce7;
+  color: white;
+  border-color: #6c5ce7;
+}
+
+/* Input */
+.input-section { position: relative; margin-bottom: 8px; }
+#inputText {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  background: white;
+}
+#inputText:focus { outline: none; border-color: #6c5ce7; }
+#clearBtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.6;
+}
+#clearBtn:hover { opacity: 1; }
+
+/* Options */
+.options-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.options-row select {
+  padding: 4px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+}
+.hidden { display: none !important; }
+
+/* Pro Banner */
+.pro-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pro-banner a { color: #92400e; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+/* Primary Button */
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.primary-btn:hover { background: #5a4bd1; }
+.primary-btn:disabled { background: #a0a0a0; cursor: not-allowed; }
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Output */
+.output-section {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #f0f0f0;
+  font-size: 12px;
+  font-weight: 600;
+}
+.output-actions { display: flex; gap: 4px; }
+.small-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  opacity: 0.6;
+}
+.small-btn:hover { opacity: 1; }
+.output-text {
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+.output-text:empty::before {
+  content: '生成结果将显示在这里';
+  color: #aaa;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #999;
+}
+.footer a { color: #6c5ce7; text-decoration: none; cursor: pointer; }
+.footer a:hover { text-decoration: underline; }
